@@ -1,0 +1,21 @@
+{
+  "name": "workout-generator",
+  "version": "1.0.0",
+  "description": "generates random workouts",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MartinDupont/WorkoutGenerator.git"
+  },
+  "author": "martin dupont",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MartinDupont/WorkoutGenerator/issues"
+  },
+  "homepage": "https://github.com/MartinDupont/WorkoutGenerator#readme"
+}
