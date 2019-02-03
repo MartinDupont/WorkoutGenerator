@@ -7,7 +7,7 @@
       {
         "load": "heavy",
         "joints": "compound",
-        "primary-muscles": "triceps",
+        "primary-muscles": ["triceps"],
         "bodyweight": "no",
         "notes": "",
         "setBlocks": [
@@ -26,7 +26,7 @@
       {
         "load": "heavy",
         "joints": "compound",
-        "primary-muscles": "legs",
+        "primary-muscles": ["legs"],
         "bodyweight": "no",
         "notes": "",
         "setBlocks": [
@@ -75,7 +75,7 @@
       {
         "load": "heavy",
         "joints": "compound",
-        "primary-muscles": "triceps",
+        "primary-muscles": ["triceps"],
         "bodyweight": "no",
         "notes": "",
         "setBlocks": [
