@@ -24,13 +24,13 @@ const matchTemplates = (block, exercise) => {
     return matchJoints && matchLoad && matchMuscles;
 };
 
-const bundleBlockAndExercise = (block, exercise) => ({
+export const bundleBlockAndExercise = (block, exercise) => ({
       exercise: exercise.name,
       setBlocks: block.setBlocks,
       notes: block.notes
   });
 
-const makeWorkout = () => {
+export const makeWorkout = () => {
     const workout = pickRandom(workouts);
     const filledExerciseBlocks = workout['exercise-blocks'].map(block => {
         //const matches = exercises;
