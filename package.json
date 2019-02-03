@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "generates random workouts",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "npm-require": "^1.3.0"
+  },
   "devDependencies": {},
   "scripts": {
     "test": "test"
