@@ -1,6 +1,6 @@
-exercises = require('./exercises.json');
+const exercises = require('./exercises.json');
 
-workouts = require('./sheiko-workouts');
+const workouts = require('./sheiko-workouts');
 
 const pickRandom = (someList) => {
     return someList[Math.floor(Math.random()*someList.length)]
