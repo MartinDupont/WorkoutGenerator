@@ -1,3 +1,4 @@
+import 'babel-polyfill'
 import { bundleBlockAndExercise} from "../src/make_workout";
 var assert = require('assert');
 
