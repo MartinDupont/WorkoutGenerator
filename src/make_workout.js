@@ -2,7 +2,7 @@ const exercises = require('./exercises.json');
 
 const workouts = require('./sheiko-workouts');
 
-const pickRandom = (someList) => {
+export const pickRandom = (someList) => {
     return someList[Math.floor(Math.random()*someList.length)]
 };
 
