@@ -5,22 +5,19 @@ export const pickRandom = (someList) => {
     return someList[Math.floor(Math.random()*someList.length)]
 };
 
-const matchTemplates = (block, exercise) => {
-  let matchJoints = false;
-  let matchLoad = false;
-  let matchMuscles = false;
+export const matchTemplates = (block, exercise) => {
 
-  if (!block.joints || (block.joints === exercise.joints)){
-      matchJoints = true
+  if (block.joints && (block.joints !== exercise.joints)){
+      return false
   }
-  if (!block.load || (block.load === exercise.load)){
-      matchLoad = true
+  if (block.load && (block.load !== exercise.load)){
+      return false
   }
-  if (block['primary-muscles'].every(muscle => exercise['primary-muscles'].includes(muscle))){
-      matchMuscles = true
+  if (block['primary-muscles'] && !(block['primary-muscles'].every(muscle => exercise['primary-muscles'].includes(muscle)))){
+      return false
   }
 
-    return matchJoints && matchLoad && matchMuscles;
+    return true
 };
 
 export const bundleBlockAndExercise = (block, exercise) => ({
