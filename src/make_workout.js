@@ -1,5 +1,5 @@
-const exercises = require('./exercises.json');
-const workouts = require('./sheiko-workouts');
+const exercises = require('../database/exercises.json');
+const workouts = require('../database/sheiko-workouts');
 
 export const pickRandom = (someList) => {
     return someList[Math.floor(Math.random()*someList.length)]
@@ -20,6 +20,20 @@ export const matchTemplates = (block, exercise) => {
     return true
 };
 
+export const matchWorkouts = (query, workout) => {
+    if (query.difficulty && workout.difficulty !== query.difficulty){
+        return false
+    }
+    if (query.type && workout.type !== query.type){
+        return false
+    }
+    if (query.tags && !(query.tags.every(tag => workout.tags.includes(tag)))){
+        return false
+    }
+
+    return true
+};
+
 export const bundleBlockAndExercise = (block, exercise) => ({
       exercise: exercise.name,
       setBlocks: block.setBlocks,
@@ -36,12 +50,8 @@ const makeWorkoutFromTemplate = (workout) => {
 };
 
 export const makeWorkout = () => {
-    const chosenWorkout = pickRandom(workouts);
+    const query = {};
+    const matches = workouts.filter(workout => matchWorkouts(query, workout));
+    const chosenWorkout = pickRandom(matches);
     return makeWorkoutFromTemplate(chosenWorkout)
-}
-
-
-makeWorkout();
-console.log(makeWorkout());
-
-
+};

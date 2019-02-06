@@ -1,3 +1,3 @@
-const sayHello = () => "Hello guys!";
+import { makeWorkout } from "./make_workout";
 
-console.log(sayHello())
+console.log(makeWorkout());
