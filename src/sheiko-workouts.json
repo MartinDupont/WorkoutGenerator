@@ -3,6 +3,9 @@
     "id": "01",
     "name": "squat marathon",
     "difficulty": "heavy",
+    "notes": "",
+    "type": "full-body",
+    "tags": ["sheiko", "strength"],
     "exercise-blocks": [
       {
         "load": "heavy",
