@@ -10,7 +10,7 @@ export const workouts = [
       {
         "load": "heavy",
         "joints": "compound",
-        "primary-muscles": ["triceps"],
+        "type": "push",
         "bodyweight": "no",
         "notes": "",
         "setBlocks": [
@@ -29,7 +29,7 @@ export const workouts = [
       {
         "load": "heavy",
         "joints": "compound",
-        "primary-muscles": ["legs"],
+        "type": "legs",
         "bodyweight": "no",
         "notes": "",
         "setBlocks": [
@@ -78,7 +78,7 @@ export const workouts = [
       {
         "load": "heavy",
         "joints": "compound",
-        "primary-muscles": ["triceps"],
+        "type": "push",
         "bodyweight": "no",
         "notes": "",
         "setBlocks": [

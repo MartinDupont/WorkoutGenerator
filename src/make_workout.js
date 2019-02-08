@@ -1,4 +1,4 @@
-import { exercises } from './database/exercises.js';
+import { exercises } from './database/exercise_database.js';
 import { workouts } from './database/sheiko-workouts.js';
 
 export const pickRandom = (someList) => {
@@ -11,6 +11,9 @@ export const matchTemplates = (block, exercise) => {
       return false
   }
   if (block.load && (block.load !== exercise.load)){
+      return false
+  }
+  if (block.type && (block.type !== exercise.type)){
       return false
   }
   if (block['primary-muscles'] && !(block['primary-muscles'].every(muscle => exercise['primary-muscles'].includes(muscle)))){
@@ -43,7 +46,7 @@ export const bundleBlockAndExercise = (block, exercise) => ({
 const makeWorkoutFromTemplate = (workout) => {
     const filledExerciseBlocks = workout['exercise-blocks'].map(block => {
         const matches = exercises.filter(exercise => matchTemplates(block, exercise));
-        return bundleBlockAndExercise(block, matches[0])
+        return bundleBlockAndExercise(block, pickRandom(matches))
     });
     const filledWorkout = {...workout, 'exercise-blocks': filledExerciseBlocks};
     return filledWorkout

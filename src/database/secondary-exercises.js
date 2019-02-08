@@ -6,7 +6,7 @@ export const exercises = [
     "type": "push",
     "primary-muscles": [
       "chest",
-      "triceps"
+      "triceps",
       "shoulders"
     ],
     "secondary-muscles": [
@@ -18,7 +18,7 @@ export const exercises = [
     "name": "Deadlift From Boxes",
     "load": "heavy",
     "joints": "compound",
-    "type": "legs"
+    "type": "legs",
     "primary-muscles": [
       "hamstrings",
       "glutes",
@@ -50,7 +50,7 @@ export const exercises = [
     "name": "Weighted Chinups",
     "load": "medium",
     "joints": "compound",
-    "type": "pull"
+    "type": "pull",
     "primary-muscles": [
       "biceps",
       "lats"
@@ -62,7 +62,7 @@ export const exercises = [
     "name": "Lat Pulldown",
     "load": "medium",
     "joints": "compound",
-    "type": "pull"
+    "type": "pull",
     "primary-muscles": [
       "biceps",
       "lats"

@@ -48,7 +48,7 @@ export const exercises = [
     "name": "Squat",
     "load": "heavy",
     "joints": "compound",
-    "type": "legs"
+    "type": "legs",
     "primary-muscles": [
       "hamstrings",
       "quads",
