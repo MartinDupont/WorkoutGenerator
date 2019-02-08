@@ -50,7 +50,6 @@ const makeWorkoutFromTemplate = (workout) => {
 };
 
 export const makeWorkout = (query = {}) => {
-    console.log(workouts);
     const matches = workouts.filter(workout => matchWorkouts(query, workout));
     const chosenWorkout = pickRandom(matches);
     return makeWorkoutFromTemplate(chosenWorkout)
