@@ -1,4 +1,4 @@
-[
+export const workouts = [
   {
     "id": "01",
     "name": "squat marathon",

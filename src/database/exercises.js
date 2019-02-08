@@ -1,4 +1,4 @@
-[
+export const exercises = [
   {
     "name": "Bench Press",
     "load": "heavy",

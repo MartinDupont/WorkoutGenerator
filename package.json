@@ -19,7 +19,6 @@
   },
   "scripts": {
     "test": "mocha --compilers js:babel-core/register",
-    "start": "./node_modules/.bin/babel  ./src --experimental --source-maps-inline -d ./dist && node ./dist/make_workout"
   },
   "repository": {
     "type": "git",

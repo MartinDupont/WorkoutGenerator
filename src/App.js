@@ -1,10 +1,11 @@
+import {makeWorkout} from "./make_workout.js";
 
 (function() {
     'use strict';
 
     var app = {
         selectedDifficulty: "",
-    };
+    };!
 
 
     /*****************************************************************************
@@ -15,11 +16,17 @@
 
     document.getElementById('selectDifficulty').addEventListener('change', function() {
         // Add the newly selected city
-        var select = document.getElementById('selectDifficulty');
-        var selected = select.options[select.selectedIndex];
-        var key = selected.value;
+        const select = document.getElementById('selectDifficulty');
+        const selected = select.options[select.selectedIndex];
+        const key = selected.value;
         app.selectedDifficulty = key;
         console.log(app.selectedDifficulty);
     });
+
+    document.getElementById('generate').addEventListener('click', function() {
+        const query = { difficulty: app.selectedDifficulty };
+        const result = makeWorkout(query);
+        console.log(result)
+    })
 })();
 

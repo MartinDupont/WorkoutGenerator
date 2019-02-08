@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Random Workout Generator</title>
-    <script src="App.js" async></script>
+    <script type="module" src="App.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
 </head>
 <body>
 
@@ -13,12 +15,22 @@
 
     <div>Welcome to my random workout generator. This website will make random barbell workouts for you from
     templates. Just put in some desired search criteria and press go!</div>
+    <br>
 
-    <select id="selectDifficulty">
-        <option value="">Any</option>
-        <option value="light">Light</option>
-        <option value="medium">Medium</option>
-        <option value="heavy">Heavy</option>
-    </select>
+    <div>
+        <div class='child inline-block-child'>Select the desired difficulty:</div>
+        <div class='child inline-block-child'>
+            <select id="selectDifficulty">
+                <option value="">Any</option>
+                <option value="light">Light</option>
+                <option value="medium">Medium</option>
+                <option value="heavy">Heavy</option>
+            </select>
+        </div>
+    </div>
+
+    <div>
+    <button id="generate">Go!</button>
+    </div>
 </body>
 </html>

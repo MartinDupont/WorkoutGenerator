@@ -1,5 +1,5 @@
-const exercises = require('../database/exercises.json');
-const workouts = require('../database/sheiko-workouts');
+import { exercises } from './database/exercises.js';
+import { workouts } from './database/sheiko-workouts.js';
 
 export const pickRandom = (someList) => {
     return someList[Math.floor(Math.random()*someList.length)]
@@ -49,8 +49,8 @@ const makeWorkoutFromTemplate = (workout) => {
     return filledWorkout
 };
 
-export const makeWorkout = () => {
-    const query = {};
+export const makeWorkout = (query = {}) => {
+    console.log(workouts);
     const matches = workouts.filter(workout => matchWorkouts(query, workout));
     const chosenWorkout = pickRandom(matches);
     return makeWorkoutFromTemplate(chosenWorkout)
