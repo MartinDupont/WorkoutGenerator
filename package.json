@@ -18,7 +18,7 @@
     "mocha": "^5.2.0"
   },
   "scripts": {
-    "test": "mocha --compilers js:babel-core/register",
+    "test": "mocha --compilers js:babel-core/register"
   },
   "repository": {
     "type": "git",
