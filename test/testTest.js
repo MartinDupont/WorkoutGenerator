@@ -1,5 +1,5 @@
 import 'babel-polyfill'
-import {bundleBlockAndExercise, matchTemplates, pickRandom} from "../src/make_workout";
+import {bundleBlockAndExercise, matchTemplates, pickRandom} from '../src/make_workout';
 import { expect } from 'chai';
 
 

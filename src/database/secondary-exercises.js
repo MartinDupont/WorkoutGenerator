@@ -72,7 +72,7 @@ export const exercises = [
   },
 {
     "name": "Leg Press",
-    "load": "heavy",
+    "load": "medium",
     "joints": "compound",
     "type": "legs",
     "primary-muscles": [

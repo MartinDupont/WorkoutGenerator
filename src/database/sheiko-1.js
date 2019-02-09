@@ -63,7 +63,7 @@ export const workouts = [
                 ]
             },
             {
-                "primary-muscles": "lower back",
+                "primary-muscles": ["lower back"],
                 "setBlocks": [
                     {
                         "percent": "65.00",
@@ -434,7 +434,7 @@ export const workouts = [
             },
             {
                 "load": "medium",
-                "primary-muscles": "legs",
+                "primary-muscles": ["quads"],
                 "setBlocks": [
                     {
                         "reps": "6",
@@ -447,7 +447,7 @@ export const workouts = [
     {
         "id": "6a1fa1d7-91b8-4222-9be5-f3c8bc38f566",
         "name": "Monster Workout 1",
-        "difficulty": "hard",
+        "difficulty": "heavy",
         "type": "full-body",
         "tags": [
             "sheiko",
@@ -569,7 +569,7 @@ export const workouts = [
             },
             {
                 "joints": "isolation",
-                "primary-muscles": "lower back",
+                "primary-muscles": ["lower back"],
                 "setBlocks": [
                     {
                         "reps": "6",
@@ -582,7 +582,7 @@ export const workouts = [
     {
         "id": "cf743e90-8663-4342-8575-9c74e27faeb3",
         "name": "",
-        "load": "heavy",
+        "difficulty": "heavy",
         "type": "full-body",
         "tags": [
             "sheiko",
@@ -678,6 +678,7 @@ export const workouts = [
     {
         "id": "b01ceeb8-662c-4435-ac24-afc524c18945",
         "name": "",
+        "difficulty": "heavy",
         "type": "full-body",
         "tags": [
             "sheiko",
@@ -766,8 +767,8 @@ export const workouts = [
                 ]
             },
             {
-                "type": "isolation",
-                "primary-muscles": ["deltoids"],
+                "joints": "isolation",
+                "primary-muscles": ["shoulders"],
                 "setBlocks": [
                     {
                         "reps": "8",
@@ -776,7 +777,7 @@ export const workouts = [
                 ]
             },
             {
-                "type": "isolation",
+                "joints": "isolation",
                 "primary-muscles": ["abs"],
                 "setBlocks": [
                     {
@@ -854,7 +855,7 @@ export const workouts = [
                 ]
             },
             {
-                "type": "isolation",
+                "joints": "isolation",
                 "primary-muscles": ["chest"],
                 "setBlocks": [
                     {
@@ -864,7 +865,7 @@ export const workouts = [
                 ]
             },
             {
-                "type": "isolation",
+                "joints": "isolation",
                 "primary-muscles": ["lower back"],
                 "setBlocks": [
                     {
@@ -878,7 +879,7 @@ export const workouts = [
     {
         "id": "f21a13e5-e2ac-4c9b-824d-676515237a5d",
         "name": "",
-        "difficulty": "hard",
+        "difficulty": "heavy",
         "type": "full-body",
         "tags": [
             "sheiko",
@@ -969,7 +970,7 @@ export const workouts = [
                 ]
             },
             {
-                "type": "isolation",
+                "joints": "isolation",
                 "primary-muscles": ["lower back"],
                 "setBlocks": [
                     {
@@ -1076,7 +1077,7 @@ export const workouts = [
                 ]
             },
             {
-                "type": "isolation",
+                "joints": "isolation",
                 "primary-muscles": ["quads"],
                 "setBlocks": [
                     {
@@ -1086,7 +1087,7 @@ export const workouts = [
                 ]
             },
             {
-                "type": "isolation",
+                "joints": "isolation",
                 "primary-muscles": ["abs"],
                 "setBlocks": [
                     {
@@ -1145,7 +1146,7 @@ export const workouts = [
                 ]
             },
             {
-                "type": "isolation",
+                "joints": "isolation",
                 "primary-muscles": ["chest"],
                 "setBlocks": [
                     {
@@ -1155,7 +1156,7 @@ export const workouts = [
                 ]
             },
             {
-                "type": "isolation",
+                "joints": "isolation",
                 "primary-muscles": ["triceps"],
                 "setBlocks": [
                     {
@@ -1165,7 +1166,7 @@ export const workouts = [
                 ]
             },
             {
-                "type": "isolation",
+                "joints": "isolation",
                 "primary-muscles": ["lower back"],
                 "setBlocks": [
                     {

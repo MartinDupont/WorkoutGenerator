@@ -68,8 +68,8 @@ const thing = function() {
     const makeRow = (block) => (`
         <tr>
             <td>${block.reps}</td>
-            <td>${block.sets}</td> 
-            <td>${block.percentage}</td>
+            <td>${block.sets}</td>
+            <td>${block.percent ? block.percent : ""}</td>
         </tr>`
     )
 

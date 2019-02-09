@@ -1,5 +1,5 @@
 import { exercises } from './database/exercise_database.js';
-import { workouts } from './database/sheiko-1.js';
+import { workouts } from './database/workout_database.js';
 
 export const pickRandom = (someList) => {
     return someList[Math.floor(Math.random()*someList.length)]
@@ -43,11 +43,17 @@ export const bundleBlockAndExercise = (block, exercise) => ({
       notes: block.notes
   });
 
-const makeWorkoutFromTemplate = (workout) => {
-    const filledExerciseBlocks = workout['exercise-blocks'].map(block => {
-        const matches = exercises.filter(exercise => matchTemplates(block, exercise));
-        return bundleBlockAndExercise(block, pickRandom(matches))
-    });
+export const fillExerciseBlocks = (block) => {
+  if (!block.exercise){
+    const matches = exercises.filter(exercise => matchTemplates(block, exercise));
+    if(matches.length === 0){console.log(block);}
+    return bundleBlockAndExercise(block, pickRandom(matches))
+  }
+  return block
+}
+
+export const makeWorkoutFromTemplate = (workout) => {
+    const filledExerciseBlocks = workout['exercise-blocks'].map(block => fillExerciseBlocks(block));
     const filledWorkout = {...workout, 'exercise-blocks': filledExerciseBlocks};
     return filledWorkout
 };

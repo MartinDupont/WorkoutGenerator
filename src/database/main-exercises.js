@@ -72,7 +72,7 @@ export const exercises = [
     ],
     "secondary-muscles": [
       "abs",
-      "lower-back"
+      "lower back"
     ],
     "bodyweight": "no"
   },
@@ -88,7 +88,7 @@ export const exercises = [
     ],
     "secondary-muscles": [
       "abs",
-      "lower-back"
+      "lower back"
     ],
     "bodyweight": "no"
   },
@@ -104,7 +104,7 @@ export const exercises = [
     ],
     "secondary-muscles": [
       "abs",
-      "lower-back"
+      "lower back"
     ],
     "bodyweight": "no"
   }
