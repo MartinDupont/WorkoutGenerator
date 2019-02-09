@@ -684,7 +684,7 @@ export const workouts = [
             "sheiko",
             "strength"
         ],
-        "notes": "",
+        "notes": "The percentages for both sets of deadlifts are calculated from your 1RM for the regular deadlift.",
         "exercise-blocks": [
             {
                 "exercise": "Deficit Deadlift",

@@ -1,9 +1,14 @@
-body {
+html, body {
   font-family: 'Helvetica', 'Verdana', sans-serif;
 }
 
 .inline-block-child {
     display: inline-block;
+    padding-bottom: 14px;
+}
+.selector {
+  width: 200%;
+  height: 200%;
 }
 
 .go-button {
@@ -11,6 +16,12 @@ body {
   color: white;
   font-size: 20px;
   border: none;
+  display: block;
+  width: 100%;
+  padding: 14px 28px 14px 28px;
+  cursor: pointer;
+  text-align: center;
+
 }
 
 .workout-name {
