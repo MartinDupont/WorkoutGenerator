@@ -9,7 +9,7 @@ export const exercises = [
       "triceps"
     ],
     "secondary-muscles": [
-      "anterior deltoids",
+      "shoulders",
       "lats"
     ],
     "bodyweight": "no"
@@ -20,7 +20,7 @@ export const exercises = [
     "joints": "compound",
     "type": "push",
     "primary-muscles": [
-      "anterior deltoids",
+      "shoulders",
       "triceps"
     ],
     "secondary-muscles": [
@@ -35,7 +35,7 @@ export const exercises = [
     "joints": "compound",
     "type": "push",
     "primary-muscles": [
-      "anterior deltoids",
+      "shoulders",
       "chest",
       "triceps"
     ],

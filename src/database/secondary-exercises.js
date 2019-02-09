@@ -55,7 +55,7 @@ export const exercises = [
       "biceps",
       "lats"
     ],
-    "secondary-muscles": ["posterior deltoids"],
+    "secondary-muscles": ["shoulders"],
     "bodyweight": "no"
   },
   {
@@ -67,7 +67,7 @@ export const exercises = [
       "biceps",
       "lats"
     ],
-    "secondary-muscles": ["posterior deltoids"],
+    "secondary-muscles": ["shoulders"],
     "bodyweight": "no"
   },
 {
@@ -82,5 +82,20 @@ export const exercises = [
     ],
     "secondary-muscles": [],
     "bodyweight": "no"
+  },
+  {
+    "name": "Dips",
+    "load": "medium",
+    "joints": "compound",
+    "type": "push",
+    "primary-muscles": [
+      "shoulders",
+      "chest",
+      "triceps"
+    ],
+    "secondary-muscles": [
+      "lats"
+    ],
+    "bodyweight": "yes"
   },
 ]

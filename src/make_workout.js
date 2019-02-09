@@ -1,5 +1,5 @@
 import { exercises } from './database/exercise_database.js';
-import { workouts } from './database/sheiko-workouts.js';
+import { workouts } from './database/sheiko-1.js';
 
 export const pickRandom = (someList) => {
     return someList[Math.floor(Math.random()*someList.length)]
