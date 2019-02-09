@@ -46,7 +46,6 @@ export const bundleBlockAndExercise = (block, exercise) => ({
 export const fillExerciseBlocks = (block) => {
   if (!block.exercise){
     const matches = exercises.filter(exercise => matchTemplates(block, exercise));
-    if(matches.length === 0){console.log(block);}
     return bundleBlockAndExercise(block, pickRandom(matches))
   }
   return block

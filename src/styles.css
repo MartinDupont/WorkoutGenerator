@@ -1,8 +1,25 @@
+body {
+  font-family: 'Helvetica', 'Verdana', sans-serif;
+}
+
 .inline-block-child {
     display: inline-block;
 }
 
+.go-button {
+  background-color: #3F51B5;
+  color: white;
+  font-size: 20px;
+  border: none;
+}
+
+.workout-name {
+  font-size: 20px;
+  font-weight: bold;
+}
 
 table, th, td {
     border: 1px solid black;
+    border-collapse: collapse;
+    text-align: center;
 }

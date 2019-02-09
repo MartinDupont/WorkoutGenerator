@@ -1,6 +1,6 @@
 import {makeWorkout} from "./make_workout.js";
 
-const thing = function() {
+const main = function() {
     'use strict';
 
     var app = {
@@ -20,7 +20,6 @@ const thing = function() {
         const selected = select.options[select.selectedIndex];
         const key = selected.value;
         app.selectedDifficulty = key;
-        console.log(app.selectedDifficulty);
     });
 
     document.getElementById('generate').addEventListener('click', function() {
@@ -37,41 +36,43 @@ const thing = function() {
 
 
     const makeTableFromJson = (jsonWorkout) => {
-        let outputString = '';
-        if (jsonWorkout.name){outputString += `<div>${jsonWorkout.name}</div>`}
-        if (jsonWorkout.notes){outputString += `<div>${jsonWorkout.notes}</div>`}
-
-        outputString += (`
-            <table style="width:100%">
-                <tr><th>Exercise</th><th>Reps, Sets, Percentage</th></tr>
+        return (`
+            ${jsonWorkout.name ? `<div class="workout-name">${jsonWorkout.name}</div>` : ''}
+            ${jsonWorkout.notes ? `<div>${`Notes: ${jsonWorkout.notes}`}</div>` : ''}
+            ${app.selectedDifficulty ? '' : `<div>${`Difficulty: ${jsonWorkout.difficulty}`}</div>`}
+            <table style="width:100%" class="outerTable">
+                <tr>
+                  <th width="40%">Exercise</th>
+                  <th width="20%">Percent</th>
+                  <th width="20%">Reps</th>
+                  <th width="20%">Sets</th>
+                </tr>
                 ${mapExerciseBlocks(jsonWorkout['exercise-blocks'])}
             </table>
         `);
-
-        return outputString
     };
 
     const mapExerciseBlocks = (exerciseBlocks) => {
         let outputString = "";
-        exerciseBlocks.forEach(block => outputString += `<tr><td>${block.exercise}</td><td>${makeSubTable(block.setBlocks)}</td></tr>`);
+        exerciseBlocks.forEach(block => outputString += `<tr><td>${block.exercise}</td>${makeSubTables(block.setBlocks)}</tr>`);
         return outputString
     };
 
-    const makeSubTable = (setBlocks) => {
-        let outputString = `
-            <table style="width:100%">
-                ${setBlocks.map(block => makeRow(block)).join('\n')}
-            </table>`;
+    const makeSubTables = (setBlocks) => {
+        let outputString = '';
+        const columns = ['percent', 'reps', 'sets'];
+        columns.forEach(column => {
+          outputString += `
+            <td>
+              <table style="width:100%" class="innerTable">
+                  ${setBlocks.map(block => makeColumn(block[column])).join('\n')}
+              </table>
+            </td>`;
+        })
         return outputString
     };
 
-    const makeRow = (block) => (`
-        <tr>
-            <td>${block.reps}</td>
-            <td>${block.sets}</td>
-            <td>${block.percent ? block.percent : ""}</td>
-        </tr>`
-    )
+    const makeColumn = (entry) => (`<tr><td>${entry ? entry : "-"}</td></tr>`);
 
 };
-thing();
+main();
