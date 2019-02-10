@@ -1,12 +1,13 @@
 export const workouts = [
     {
         "id": "45317245-7a84-4c2b-9325-6de406399601",
+        "focus": "strength",
+        "duration": "60-90",
         "name": "",
         "type": "full-body",
         "difficulty": "medium",
         "tags": [
             "sheiko",
-            "strength"
         ],
         "notes": "",
         "exercise-blocks": [
@@ -56,7 +57,6 @@ export const workouts = [
                 "primary-muscles": ["chest"],
                 "setBlocks": [
                     {
-                        "percent": "65.00",
                         "reps": "6",
                         "sets": "4"
                     }
@@ -66,7 +66,6 @@ export const workouts = [
                 "primary-muscles": ["lower back"],
                 "setBlocks": [
                     {
-                        "percent": "65.00",
                         "reps": "5",
                         "sets": "5"
                     }
@@ -76,12 +75,13 @@ export const workouts = [
     },
     {
         "id": "06b230e6-b041-4a73-9549-b0ce1caf730a",
+        "focus": "strength",
         "name": "",
+        "duration": "60-90",
         "type": "full-body",
         "difficulty": "medium",
         "tags": [
             "sheiko",
-            "strength"
         ],
         "notes": "",
         "exercise-blocks": [
@@ -158,12 +158,13 @@ export const workouts = [
     },
     {
         "id": "acc16e9a-6230-493d-8a0e-6a84f2473a73",
+        "focus": "strength",
         "name": "Bench Marathon 1",
+        "duration": "90-120",
         "type": "full-body",
         "difficulty": "heavy",
         "tags": [
             "sheiko",
-            "strength"
         ],
         "notes": "",
         "exercise-blocks": [
@@ -273,12 +274,13 @@ export const workouts = [
     },
     {
         "id": "c74d9583-e306-45b2-981f-bf98628fbfbd",
+        "focus": "strength",
         "name": "",
+        "duration": "90-120",
         "difficulty": "medium",
         "type": "full-body",
         "tags": [
             "sheiko",
-            "strength"
         ],
         "notes": "",
         "exercise-blocks": [
@@ -369,12 +371,13 @@ export const workouts = [
     },
     {
         "id": "8037a2a7-a691-4be9-80de-022fd3351e74",
+        "focus": "strength",
         "name": "",
+        "duration": "60-90",
         "difficulty": "medium",
         "type": "full-body",
         "tags": [
             "sheiko",
-            "strength"
         ],
         "notes": "",
         "exercise-blocks": [
@@ -446,12 +449,13 @@ export const workouts = [
     },
     {
         "id": "6a1fa1d7-91b8-4222-9be5-f3c8bc38f566",
+        "focus": "strength",
         "name": "Monster Workout 1",
+        "duration": "90-120",
         "difficulty": "heavy",
         "type": "full-body",
         "tags": [
             "sheiko",
-            "strength"
         ],
         "notes": "This one is long.",
         "exercise-blocks": [
@@ -581,12 +585,13 @@ export const workouts = [
     },
     {
         "id": "cf743e90-8663-4342-8575-9c74e27faeb3",
+        "focus": "strength",
         "name": "",
+        "duration": "90-120",
         "difficulty": "heavy",
         "type": "full-body",
         "tags": [
             "sheiko",
-            "strength"
         ],
         "notes": "",
         "exercise-blocks": [
@@ -677,12 +682,13 @@ export const workouts = [
     },
     {
         "id": "b01ceeb8-662c-4435-ac24-afc524c18945",
+        "focus": "strength",
         "name": "",
+        "duration": "90-120",
         "difficulty": "heavy",
         "type": "full-body",
         "tags": [
             "sheiko",
-            "strength"
         ],
         "notes": "The percentages for both sets of deadlifts are calculated from your 1RM for the regular deadlift.",
         "exercise-blocks": [
@@ -791,12 +797,13 @@ export const workouts = [
     },
     {
         "id": "31eb6e2b-1a63-4366-a117-55b9564864c5",
+        "focus": "strength",
         "name": "",
+        "duration": "60-90",
         "difficulty": "medium",
         "type": "full-body",
         "tags": [
             "sheiko",
-            "strength"
         ],
         "notes": "",
         "exercise-blocks": [
@@ -878,12 +885,13 @@ export const workouts = [
     },
     {
         "id": "f21a13e5-e2ac-4c9b-824d-676515237a5d",
+        "focus": "strength",
         "name": "",
         "difficulty": "heavy",
+        "duration": "90-120",
         "type": "full-body",
         "tags": [
             "sheiko",
-            "strength"
         ],
         "notes": "Dips may also be done with weight, if desired.",
         "exercise-blocks": [
@@ -983,12 +991,13 @@ export const workouts = [
     },
     {
         "id": "6021c37c-a0f2-4a46-912a-d6cca0005bc8",
+        "focus": "strength",
         "name": "",
+        "duration": "90-120",
         "difficulty": "heavy",
         "type": "full-body",
         "tags": [
             "sheiko",
-            "strength"
         ],
         "notes": "",
         "exercise-blocks": [
@@ -1100,12 +1109,13 @@ export const workouts = [
     },
     {
         "id": "4f77f7cc-79a5-4acf-9869-a098c39ddd46",
+        "focus": "strength",
         "name": "",
+        "duration": "60-90",
         "difficulty": "light",
         "type": "full-body",
         "tags": [
             "sheiko",
-            "strength"
         ],
         "notes": "",
         "exercise-blocks": [

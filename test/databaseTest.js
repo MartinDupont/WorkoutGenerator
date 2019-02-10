@@ -8,6 +8,7 @@ describe("the workouts database", ()=> {
   it("should be possible to generate a workout for every entry", () => {
     workouts.forEach(workout => {
       const result = makeWorkoutFromTemplate(workout)
+      if (result === undefined){console.log(workout)}
       expect(result).not.to.be.undefined
     })
   })
@@ -16,6 +17,17 @@ describe("the workouts database", ()=> {
     const result = new Set(difficulties);
     const expected = new Set(["light", "medium", "heavy"])
     expect(result).to.deep.equal(expected);
+  })
+  it("should have unique ids for every exercise", () => {
+    const ids = workouts.map(workout => workout.id);
+    const uniqueIds = Array.from(new Set(ids));
+    expect(ids.length).to.deep.equal(uniqueIds.length);
+  })
+  it("should have durations quantized by 30mins", () => {
+    const durations = workouts.map(workout => workout.duration);
+    const result = Array.from(new Set(durations));
+    const allowed = ["30-60", "60-90", "90-120", "120-150"]
+    expect(result.every(d => allowed.includes(d))).to.be.true;
   })
 })
 

@@ -48,7 +48,19 @@ export const exercises = [
   },
   {
     "name": "Weighted Chinups",
-    "load": "medium",
+    "load": "heavy",
+    "joints": "compound",
+    "type": "pull",
+    "primary-muscles": [
+      "biceps",
+      "lats"
+    ],
+    "secondary-muscles": ["shoulders"],
+    "bodyweight": "no"
+  },
+  {
+    "name": "Barbell Rows",
+    "load": "heavy",
     "joints": "compound",
     "type": "pull",
     "primary-muscles": [
@@ -97,5 +109,18 @@ export const exercises = [
       "lats"
     ],
     "bodyweight": "yes"
+  },
+  {
+    "name": "Dumbell Shoulder Press",
+    "load": "medium",
+    "joints": "compound",
+    "type": "push",
+    "primary-muscles": [
+      "shoulders",
+      "chest",
+      "triceps"
+    ],
+    "secondary-muscles": [],
+    "bodyweight": "no"
   },
 ]

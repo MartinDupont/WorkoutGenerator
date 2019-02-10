@@ -53,6 +53,27 @@ export const exercises = [
     "bodyweight": "no"
   },
   {
+    "name": "Hamstring Curls",
+    "load": "light",
+    "joints": "isolation",
+    "primary-muscles": [
+      "hamstrings",
+    ],
+    "secondary-muscles": [],
+    "bodyweight": "no"
+  },
+  {
+    "name": "Glute Hamstring Raises",
+    "load": "light",
+    "joints": "compound",
+    "primary-muscles": [
+      "glutes",
+      "hamstrings",
+    ],
+    "secondary-muscles": ["lower back"],
+    "bodyweight": "no"
+  },
+  {
     "name": "Pushups",
     "load": "light",
     "type": "push",
@@ -85,6 +106,22 @@ export const exercises = [
     "load": "light",
     "joints": "isolation",
     "primary-muscles": ["shoulders"],
+    "secondary-muscles": [],
+    "bodyweight": "no"
+  },
+  {
+    "name": "Barbell Bicep Curls",
+    "load": "light",
+    "joints": "isolation",
+    "primary-muscles": ["biceps"],
+    "secondary-muscles": [],
+    "bodyweight": "no"
+  },
+  {
+    "name": "Dumbell Bicep Curls",
+    "load": "light",
+    "joints": "isolation",
+    "primary-muscles": ["biceps"],
     "secondary-muscles": [],
     "bodyweight": "no"
   },
