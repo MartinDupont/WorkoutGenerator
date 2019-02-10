@@ -5,24 +5,6 @@ export const pickRandom = (someList) => {
     return someList[Math.floor(Math.random()*someList.length)]
 };
 
-export const matchTemplates = (block, exercise) => {
-
-  if (block.joints && (block.joints !== exercise.joints)){
-      return false
-  }
-  if (block.load && (block.load !== exercise.load)){
-      return false
-  }
-  if (block.type && (block.type !== exercise.type)){
-      return false
-  }
-  if (block['primary-muscles'] && !(block['primary-muscles'].every(muscle => exercise['primary-muscles'].includes(muscle)))){
-      return false
-  }
-
-    return true
-};
-
 export const isNotEmptyStringOrArray = (item) => {
     return (item !== "") && !(Array.isArray(item) && item.length === 0)
 }
@@ -63,7 +45,8 @@ export const bundleBlockAndExercise = (block, exercise) => ({
 
 export const fillExerciseBlocks = (block) => {
   if (!block.exercise){
-    const matches = exercises.filter(exercise => matchTemplates(block, exercise));
+    const queryFromBlock = {...block, setBlocks: []}
+    const matches = exercises.filter(exercise => matchQuery(queryFromBlock, exercise));
     return bundleBlockAndExercise(block, pickRandom(matches))
   }
   return block
