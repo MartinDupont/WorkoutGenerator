@@ -23,17 +23,35 @@ export const matchTemplates = (block, exercise) => {
     return true
 };
 
-export const matchWorkouts = (query, workout) => {
-    if (query.difficulty && workout.difficulty !== query.difficulty){
-        return false
-    }
-    if (query.type && workout.type !== query.type){
-        return false
-    }
-    if (query.tags && !(query.tags.every(tag => workout.tags.includes(tag)))){
-        return false
-    }
+export const isNotEmptyStringOrArray = (item) => {
+    return (item !== "") && !(Array.isArray(item) && item.length === 0)
+}
+export const matchQuery = (query, item) => {
+    const queryKeys = Object.keys(query).filter(key => isNotEmptyStringOrArray(query[key]));
+    for (var i = 0; i < queryKeys.length; i++){
+      const key = queryKeys[i];
+      const val = query[key];
+      const itemVal = item[key];
 
+      if (!itemVal || !val){
+        return false
+      }
+      if (Array.isArray(val) && Array.isArray(itemVal)){
+        if (!val.every(v => itemVal.includes(v))){
+          return false
+        }
+      }  else if (Array.isArray(itemVal)){
+        if (!itemVal.includes(val)){
+          return false
+        }
+      } else if (Array.isArray(val)){
+        if (!val.includes(itemVal)){
+          return false
+        }
+      } else if (val !== itemVal){
+        return false
+      }
+    }
     return true
 };
 
@@ -58,7 +76,7 @@ export const makeWorkoutFromTemplate = (workout) => {
 };
 
 export const makeWorkout = (query = {}) => {
-    const matches = workouts.filter(workout => matchWorkouts(query, workout));
+    const matches = workouts.filter(workout => matchQuery(query, workout));
     const chosenWorkout = pickRandom(matches);
     return makeWorkoutFromTemplate(chosenWorkout)
 };
