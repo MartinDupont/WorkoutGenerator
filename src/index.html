@@ -8,27 +8,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-
     <header class="header">
         <h1 class="header__title">Random Workout Generator</h1>
     </header>
 
     <div>
       <p>
-        Welcome to my random workout generator. This website will make random barbell workouts for you from
-        templates. Just put in some desired search criteria and press go!
+        This website will make random barbell workouts for you from
+        templates. Just put in some search criteria and press go!
       </p>
-      <br>
       <p>
-        As you may have noticed, this page is still in very early development. At the moment there is only
-        one available search criteria, which is difficulty. Also, the selection of workouts is a bit limited.
-        The workouts are currently all built from templates from the "sheiko" program, named after the russian
-        powerlifting trainer. So the workouts are difficult, focusing on the big lifts, and training primarily strength.
-        I hope to add some more variety to the workout database soon.
+        This site is mostly aimed at experienced weightlifters and bodybuilders. You should know your 1 rep maximum
+        for the squat, deadlift, bench press and overhead press, and be able to at
+        least estimate your 1RM for some other lifts.
+      </p>
+      <p>
+        This page is still in very early development. The
+        selection criteria are limited, and the workout database is not very large.
+        I hope to be adding more functionality soon.
       </p>
   </div>
-    <br>
-
     <div>
         <div class='child inline-block-child'>Select the desired difficulty:</div>
         <div class='child inline-block-child'>
@@ -37,6 +36,17 @@
                 <option value="light">Light</option>
                 <option value="medium">Medium</option>
                 <option value="heavy">Heavy</option>
+            </select>
+        </div>
+    </div>
+    <div>
+        <div class='child inline-block-child'>Select the desired duration (minutes):</div>
+        <div class='child inline-block-child'>
+            <select class="selector" id="selectDuration">
+                <option value="">Any</option>
+                <option value="30-60">30-60</option>
+                <option value="60-90">60-90</option>
+                <option value="90-120">90-120</option>
             </select>
         </div>
     </div>

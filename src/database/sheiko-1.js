@@ -787,7 +787,6 @@ export const workouts = [
                 "primary-muscles": ["abs"],
                 "setBlocks": [
                     {
-                        "percent": "90.00",
                         "reps": "8",
                         "sets": "3"
                     }

@@ -8,6 +8,7 @@ export const pickRandom = (someList) => {
 export const isNotEmptyStringOrArray = (item) => {
     return (item !== "") && !(Array.isArray(item) && item.length === 0)
 }
+
 export const matchQuery = (query, item) => {
     const queryKeys = Object.keys(query).filter(key => isNotEmptyStringOrArray(query[key]));
     for (var i = 0; i < queryKeys.length; i++){

@@ -5,6 +5,7 @@ const main = function() {
 
     var app = {
         selectedDifficulty: "",
+        selectedDuration: "",
     };!
 
 
@@ -15,15 +16,24 @@ const main = function() {
      ****************************************************************************/
 
     document.getElementById('selectDifficulty').addEventListener('change', function() {
-        // Add the newly selected city
         const select = document.getElementById('selectDifficulty');
         const selected = select.options[select.selectedIndex];
         const key = selected.value;
         app.selectedDifficulty = key;
     });
 
+    document.getElementById('selectDuration').addEventListener('change', function() {
+        const select = document.getElementById('selectDuration');
+        const selected = select.options[select.selectedIndex];
+        const key = selected.value;
+        app.selectedDuration = key;
+    });
+
     document.getElementById('generate').addEventListener('click', function() {
-        const query = { difficulty: app.selectedDifficulty };
+        const query = {
+            difficulty: app.selectedDifficulty,
+            duration: app.selectedDuration
+          };
         const result = makeWorkout(query);
         document.getElementById("tableArea").innerHTML = makeTableFromJson(result);
     });
@@ -40,10 +50,11 @@ const main = function() {
             ${jsonWorkout.name ? `<div class="workout-name">${jsonWorkout.name}</div>` : ''}
             ${jsonWorkout.notes ? `<div>${`Notes: ${jsonWorkout.notes}`}</div>` : ''}
             ${app.selectedDifficulty ? '' : `<div>${`Difficulty: ${jsonWorkout.difficulty}`}</div>`}
+            ${app.selectedDuration ? '' : `<div>${`${jsonWorkout.duration} minutes`}</div>`}
             <table style="width:100%" class="outerTable">
                 <tr>
                   <th width="40%">Exercise</th>
-                  <th width="20%">Percent</th>
+                  <th width="20%">Percent of 1RM</th>
                   <th width="20%">Reps</th>
                   <th width="20%">Sets</th>
                 </tr>
