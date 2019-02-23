@@ -15,11 +15,8 @@ phases:
     - echo "Build completed on $(date)"
 artifacts:
   files:
-  - infrastructure/cf-template.yaml
-  - infrastructure/cf-template.config
-  - cicd/deployspec.yaml
-  - cicd/deploy.sh
   - src/**/*
+  base-directory: src
 cache:
   paths:
   - node_modules/**/*
