@@ -1,8 +1,11 @@
 AWSTemplateFormatVersion: 2010-09-09
 Description: Pipeline for frontend
 Parameters:
-  RepositoryName:
-    Type: String
+  RepositoryName: random-workout-generator
+  CloudFrontStackName: E2LYAHFQLDJDRG
+  StackName: random-workout-generator
+  RepoName: random-workout-generator-repo
+  OriginalBucketName: random-workout-generator-contentbucket-9ph9yu2y312f
 Resources:
   CodeCommitEventsRole:
     Type: AWS::IAM::Role
@@ -58,14 +61,14 @@ Resources:
             - cloudformation:DescribeChangeSet
             - cloudformation:ExecuteChangeSet
             Effect: Allow
-            Resource: !Sub arn:aws:cloudformation:${AWS::Region}:${AWS::AccountId}:stack/${RepositoryName}/*
+            Resource: !Sub arn:aws:cloudformation:${AWS::Region}:${AWS::AccountId}:stack/${StackName}/*
           - Effect: Allow
             Action:
             - codecommit:GetBranch
             - codecommit:GetCommit
             - codecommit:UploadArchive
             - codecommit:GetUploadArchiveStatus
-            Resource: !Sub arn:aws:codecommit:${AWS::Region}:${AWS::AccountId}:${RepositoryName}
+            Resource: !Sub arn:aws:codecommit:${AWS::Region}:${AWS::AccountId}:${RepoName}
   CodeBuildServiceRole:
     Type: AWS::IAM::Role
     Properties:
@@ -89,11 +92,11 @@ Resources:
             - s3:PutObject
             - s3:ListBucket
             Effect: Allow
-            Resource: !Sub arn:aws:s3:::${RepositoryName}-*
+            Resource: !Sub arn:aws:s3:::${OriginalBucketName}-*
           - Action:
             - cloudformation:DescribeStackResource
             Effect: Allow
-            Resource: !Sub arn:aws:cloudformation:${AWS::Region}:${AWS::AccountId}:stack/${RepositoryName}/*
+            Resource: !Sub arn:aws:cloudformation:${AWS::Region}:${AWS::AccountId}:stack/${StackName}/*
   CloudFormationRole:
     Type: AWS::IAM::Role
     Properties:
@@ -142,11 +145,6 @@ Resources:
   CodeBuildBuildProject:
     Type: AWS::CodeBuild::Project
     Properties:
-      Cache:
-        Location: !Sub
-          - ${BucketName}/cache/${RepositoryName}
-          - BucketName: !ImportValue pipeline-artifacts-bucket-name
-        Type: S3
       Artifacts:
         Type: CODEPIPELINE
       Source:
@@ -184,7 +182,7 @@ Resources:
         - Name: AWS_ACCOUNT_ID
           Value: !Ref AWS::AccountId
         - Name: DISTRIBUTION_STACK_NAME
-          Value: !Ref RepositoryName
+          Value: !Ref StackName
       Name: !Sub ${RepositoryName}-deploy
       ServiceRole: !Ref CodeBuildServiceRole
   CodeBuildDeployLogGroup:
@@ -202,7 +200,7 @@ Resources:
         detail-type:
         - CodeCommit Repository State Change
         resources:
-        - !Sub arn:aws:codecommit:${AWS::Region}:${AWS::AccountId}:${RepositoryName}
+        - !Sub arn:aws:codecommit:${AWS::Region}:${AWS::AccountId}:${RepoName}
         detail:
           referenceType:
           - branch
@@ -230,7 +228,7 @@ Resources:
             Provider: CodeCommit
             Version: 1
           Configuration:
-            RepositoryName: !Ref RepositoryName
+            RepositoryName: !Ref RepoName
             BranchName: master
             PollForSourceChanges: false
           OutputArtifacts:
