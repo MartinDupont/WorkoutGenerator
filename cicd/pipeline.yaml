@@ -145,6 +145,11 @@ Resources:
   CodeBuildBuildProject:
     Type: AWS::CodeBuild::Project
     Properties:
+      Cache:
+        Location: !Sub
+          - ${BucketName}/cache/${RepositoryName}
+          - BucketName: !ImportValue pipeline-artifacts-bucket-name
+        Type: S3
       Artifacts:
         Type: CODEPIPELINE
       Source:
