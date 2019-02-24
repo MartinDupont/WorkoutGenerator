@@ -11,7 +11,7 @@ phases:
     - echo "Build module"
     - npm run test
     - WEB_BUCKET=random-workout-generator-contentbucket-9ph9yu2y312f
-    - aws s3 sync ./build s3://$WEB_BUCKET/ --exclude index.html max-age=100000
+    - aws s3 sync ./build s3://$WEB_BUCKET/ --exclude index.html
     - aws s3 cp ./build/index.html s3://$WEB_BUCKET/ --cache-control max-age=0
   post_build:
     commands:
